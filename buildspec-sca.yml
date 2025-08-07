@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install safety
+  build:
+    commands:
+      - echo "Starting SCA scan..."
+      - safety check -r requirements.txt
